@@ -1,8 +1,9 @@
 import Header from "@/components/Header";
 import Banner from "@/components/Banner";
+import ProductFeed from "@/components/ProductFeed";
 import Head from "next/head";
 
-export default function Home() {
+export default function Home({ products }) {
   return (
     <div className="bg-gray-100 ">
       <Head>
@@ -23,8 +24,24 @@ export default function Home() {
 
         {/* ProductFeed */}
 
+        {products && (<ProductFeed products={products} />)}
+
       </main>
 
     </div>
   );
 }
+
+export async function getServerSideProps() {
+  
+  const data = await fetch("https://fakestoreapi.com/products");
+  const products = await data.json();
+
+  return {
+    props: {
+      products,
+    },
+  }
+}
+
+// https://fakestoreapi.com/products

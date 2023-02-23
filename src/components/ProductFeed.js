@@ -21,7 +21,7 @@ export default function ProductFeed({products}) {
       ))}
 
       <img 
-        className="md:col-span-full" 
+        className="md:col-span-full mx-5" 
         src="https://links.papareact.com/dyz" 
         alt="" 
       />

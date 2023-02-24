@@ -5,10 +5,15 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/outline";
 import { signIn, signOut, useSession } from "next-auth/react";
+import Link from "next/link";
+import { useSelector } from "react-redux";
+import { selectItems } from "@/slices/basketSlice";
 
 export default function Header() {
 
   const {data: session} = useSession();
+
+  const items = useSelector(selectItems);
 
   return (
 
@@ -17,7 +22,7 @@ export default function Header() {
       {/* top */}
 
       <div className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
-        <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
+        <Link href="/" className="mt-2 flex items-center flex-grow sm:flex-grow-0">
           <Image 
             src="https://links.papareact.com/f90"
             alt=""
@@ -26,7 +31,7 @@ export default function Header() {
             objectFit="contain"
             className="cursor-pointer"
           />
-        </div>
+        </Link>
 
         {/* search bar */}
 
@@ -46,7 +51,7 @@ export default function Header() {
                   session.user.name
                   }</p>
               ) : (
-                <p>Please Sign in</p>  
+                <p>Please Sign In</p>  
               )
             }
             <p className="font-extrabold md:text-sm">Account & Lists</p>
@@ -55,13 +60,14 @@ export default function Header() {
             <p>Returns</p>
             <p className="font-extrabold md:text-sm">& Orders</p>
           </div>
-          <div className="relative flex items-center link">
-            <span className="absolute top-0 right-0 md:right-12 h-4 w-4 bg-yellow-400 rounded-full text-center text-black font-bold">0</span>
+          <Link href="/checkout" className="relative flex items-center link">
+            <span className="absolute top-0 right-0 md:right-12 h-4 w-4 bg-yellow-400 rounded-full text-center text-black font-bold">
+              {items.length}
+            </span>
             <ShoppingCartIcon className="h-9" />
             <p className="hidden md:inline font-extrabold md:text-sm ml-1 mt-2">Basket</p>
-          </div>
+          </Link>
         </div>
-
       </div>
 
       {/* bottom */}

@@ -56,10 +56,11 @@ export default function Checkout() {
         </div>
 
         {/* right */}
-        <div className="flex flex-col bg-white p-10 shadow-md">
+        
+        <div className="flex flex-col mx-5 lg:mx-0 bg-white p-10 shadow-md">
           {items.length > 0 && (
             <>
-              <h2>
+              <h2 className="whitespace-nowrap">
                 Subtotal ({items.length} items): {" "}
                 <span className="font-bold">
                   <Currency quantity={total} />
@@ -76,7 +77,6 @@ export default function Checkout() {
             </>
           )}
         </div>
-
       </main>
     </div>
   )

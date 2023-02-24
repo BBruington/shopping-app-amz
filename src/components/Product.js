@@ -1,13 +1,25 @@
 import Image from "next/legacy/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { StarIcon } from "@heroicons/react/solid";
+import uuid from "react-uuid";
 import Currency from "react-currency-formatter";
 
 
 export default function Product({id, title, price, description, category, image}) {
-  const [hasPrime] = useState(true
-    // Math.random() < 0.5 
-  )
+  
+  const [rating, setRating] = useState(1);
+
+  const [hasPrime, setHasPrime] = useState(true);
+
+  const MIN_RATING = 1;
+  const MAX_RATING = 5;
+
+  useEffect(() => {
+    setRating(
+      Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
+    );
+    setHasPrime(Math.random() < 0.5);
+  }, []);
 
   return (
     <div className="relative flex flex-col m-5 bg-white z-30 p-10 ">
@@ -18,11 +30,9 @@ export default function Product({id, title, price, description, category, image}
       <h4 className="my-3">{title}</h4>
 
       <div className="flex">
-
-        <StarIcon className="h-5 text-yellow-500"></StarIcon>
-        <StarIcon className="h-5 text-yellow-500"></StarIcon>
-        <StarIcon className="h-5 text-yellow-500"></StarIcon>
-
+        {Array(rating).fill().map((_,i) => (
+          <StarIcon key={uuid()} className="h-5 text-yellow-500"></StarIcon>
+        ))}
       </div>
 
       <p className="text-xs my-2 line-clamp-2">{description}</p>

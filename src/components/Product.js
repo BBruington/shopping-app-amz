@@ -29,9 +29,11 @@ export default function Product({id, title, price, description, category, image}
       id,
       title,
       price,
+      rating,
       description,
       category, 
-      image
+      image,
+      hasPrime
     };
     //add the product into the redux store inside the basket container
     dispatch(addToBasket(product))

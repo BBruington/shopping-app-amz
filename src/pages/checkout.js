@@ -5,14 +5,27 @@ import { selectItems, selectTotal } from "@/slices/basketSlice";
 import CheckoutProduct from "@/components/CheckoutProduct";
 import Currency from "react-currency-formatter";
 import { useSession } from "next-auth/react";
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
 
-
+const stripePromise = loadStripe(process.env.stripe_public_key);
 
 export default function Checkout() {
 
   const {data: session} = useSession();
   const total = useSelector(selectTotal);
   const items = useSelector(selectItems);
+
+  const createCheckoutSession = async () => {
+    const stripe = await stripePromise;
+
+    //call backend to creat a checkout session...
+    const checkoutSession = await axios.post("/api/create-checkout-session",
+    {
+      items: items,
+      email: session.user.email
+    })
+  }
 
 
   return (
@@ -68,6 +81,8 @@ export default function Checkout() {
               </h2>
 
               <button 
+                role="link"
+                onClick={createCheckoutSession}
                 disabled={!session}
                 className={`button mt-2 
                 ${!session && 'from-gray-300 to-gray-500 border-gray-200 text-gray-300 cursor-not-allowed'}`

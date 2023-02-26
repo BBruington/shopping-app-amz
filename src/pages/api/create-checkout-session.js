@@ -31,7 +31,6 @@ export default async function createCheckoutSession(req, res)  {
         },
       },
     }],
-    //shipping_rates: ['shr_1MfWn7ID2roIB7hy1CLO74VI'],
     shipping_address_collection: {
       allowed_countries: ['GB', 'US', 'CA'],
     },

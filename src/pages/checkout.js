@@ -17,9 +17,10 @@ export default function Checkout() {
   const items = useSelector(selectItems);
 
   const createCheckoutSession = async () => {
+
     const stripe = await stripePromise;
 
-    //call backend to creat a checkout session...
+    //call backend to create a checkout session...
     const checkoutSession = await axios.post("/api/create-checkout-session",
     {
       items: items,
@@ -27,6 +28,7 @@ export default function Checkout() {
     });
 
     //Redirect user/customer to Stripe Checkout
+    //a succesful create-checkout-session will give me an id from stripe i can use to redirect to checkout
     const result = await stripe.redirectToCheckout({
       sessionId: checkoutSession.data.id,
     });

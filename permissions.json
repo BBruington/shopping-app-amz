@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "shopping-app-amz",
+  "private_key_id": "ea60c5a564fce2927f1d23231f9d9fd530fde7b6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCSRx8LpvskARMz\nO2BaD4RF8YqTM2j8u1DTdRmzapH4+EuuvKEwcij+xJ+eGur5nlnfuX2qTwYUNCBD\nEClGi+/E7PdrEdfILxVRMdkHyygrG7jkBKcDrEPvh4VCiQEHXVSHzTsarhweoJCL\nHY6mJqOpuWWnFxqavcXOr5W954nS2JM7GlNDifsWwejOzzAVQ9jfwgYbZsxrgxiv\nQNzp2sqw6vJdbnoNT1kuZH8PGkjNyec7Nz7eHiKHAY7CnItPzh/kpW/wJT8A3hj0\nChUt1uVonpuIaSsWJT1hyTJYNarnmCeJ8dVHlgTrZsy2/yp+dW8FqdfRJBSLWFXs\nYx2mIM8tAgMBAAECggEAAPOaKG7p+/5PIVUwjPAZkdmUEjMSasUj2Hb5jNOTptqj\n+2YEvRZGXVSVc+eEQc1y6OQBr5rwqi77Sr8PKwNRXabrpnRTmAdztwyA90OuEOG5\nnoTH5VvjMUALcOGynQP8FHS+/q8amw8RAaar5+QhH8Mx/cKbt11RV8UypIKeFei0\n6myCYgwbd1iyjSInNS+L+B8vYJT7KjDmKY7mZXelOCdt4Lv49BlBgFgBs8KIMNFy\no8S2DdxgAqiSut23ekhaTfKSk1cEbqF+AuaFijKmFpKEcyK69iCEKLXDVWSYZb9P\nSQLgkLcvaLRjo5ZjvXq/clgysCKKbu3tqkIf6u3ZYQKBgQDGSIkm5yxYnlqPOydM\nR6e+ytY+MDBGJxVgXFCGemhtUfaTXbojeNauf0NysN99/vVVnQFYBtDoq2Tho0NU\nxah4JI7MCcAGDZ7OM5CGAyM3naymcJ5ModD0ypQhaurLtv0d5rWKrLA8gqOHN2qa\nORy3fy1WN2LqHsHWv2YMUki+9QKBgQC820s8CgHa15RyTC1jsyLqCwVNKaWQK/id\n1DPRT5jIX/dasoixAggEy3JIwV3ZaMR7RVSh2AtzrtOvqTAsu3zFZLDYyzfsgGcj\nSQ/P/Fo8xZPe4j4ZyU8bnqjuNMp/TzSJvsJzR/uGbHycLhl4h+ffgEtyyg4VudTJ\n7BBgjqE8WQKBgAyx8DYRbwFtghbRjr6Ph+nrSrRImY6kSfYVcwJpK+5z5Pmicpx6\nzCP3+fWJ5YVHoaWNm9xq800yTA82SMVQsmyeypW9uhGpJZXGL2alJMgWzEsLwtbd\nNWe24K0TD11jpekYMF9klxQIuTebELQ3G+OTvO9cNHUQ6xA4yOvZCNdRAoGAPKgO\nRO1N5TTiV8eBuIjbiOIbRMpAg8qroj16mxp+jrTL5FR9NKTbYHbbcOSyONa+bH07\nDnQuUWxwTvX/JA7fpyKM7kRu5MXk2l9n9bwuW2B1+tsdaPjQMKXHyiIoe7U7wZYE\nLDSNY4JKj3r68UxtO8qf8PFWjsHNx0DLjcehn5kCgYEAv6ogVIopUgUXvxrNA7iK\n1rlcy0ePuFsoRhX7Pe4fVmXvQ7NJjWWc0oKSdk8Bog66GXJxdUv2em+dag83SZGh\njszCz+LO1pWwHIWiC4E4AQNbcrwe2Yw7gpai/2RdQYxHy75HK9fMkVfJS24rejul\nCQk26BKT2JlOrZh8grflMIw=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-xw9z7@shopping-app-amz.iam.gserviceaccount.com",
+  "client_id": "108275438835664074125",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-xw9z7%40shopping-app-amz.iam.gserviceaccount.com"
+}

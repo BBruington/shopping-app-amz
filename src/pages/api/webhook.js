@@ -2,19 +2,20 @@
 //aka when paypal tells an app when your client pays you
 //basically it's how online accounts "speak" to each other and get notified when something new happens
 
-import { buffer } from "micro/types/src/lib";
+import { buffer } from "micro";
 import * as admin from 'firebase-admin';
 
 //secure a connection to firebase from the backend
 const serviceAccount = require('../../../permissions.json');
-const app = !admin.apps.length ? admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-}) : admin.app();
+const app = !admin.apps.length 
+  ? admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+  }) : admin.app();
 
 //establish a connection to stripe
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-const endpointSecret = process.env.STRIPE_SECRET_KEY;
+const endpointSecret = process.env.STRIPE_SIGNING_SECRET;
 
 const fulfillOrder = async (session) => {
   console.log("Fulfilling order: ", session);

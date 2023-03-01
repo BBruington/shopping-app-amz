@@ -3,6 +3,7 @@ import { getSession, useSession } from "next-auth/react";
 import { db } from "@/utils/firebase";
 import { collection, getDocs } from "firebase/firestore"; 
 import moment from "moment/moment";
+import Order from "@/components/Order";
 
 export async function getServerSideProps(context) {
   const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
@@ -17,7 +18,7 @@ export async function getServerSideProps(context) {
   }
   //firebase db
   const stripeOrders = await getDocs(collection(db, `users`, `${session.user.email}`, 'orders'))
-  console.log('stripe orders: ', stripeOrders)
+
   //stripe orders
   const orders = await Promise.all(
     stripeOrders.docs.map(async (order) => ({
@@ -34,8 +35,6 @@ export async function getServerSideProps(context) {
     }))
   )
 
-  console.log("orders: ", orders)
-
   return {
     props: {orders}
   }
@@ -45,19 +44,32 @@ export default function Orders({ orders }) {
 
   const {data: session} = useSession();
  
-
   return (
     <div className="h-screen bg-gray-100">
       <Header />
       <main className="flex flex-col max-w-screen-lg mx-auto p-10">
         <h1 className="text-3xl border-b mb-2 pb-1 border-yellow-400">Your Orders</h1>
         {session ? (
-          <h2>Orders</h2>
+          <h2>{orders.length} Orders</h2>
         ) : (
           <h2>Please sign in to see your orders</h2>
         )}
-
-        <div className="mt-5 space-y-4"></div>
+        {/* id, amount, amountShipping, items, timestamp, images */}
+        <div className="mt-5 space-y-4">
+          {orders?.map(({
+            id, amount, amountShipping, items, timestamp, images
+          }) => (
+            <Order 
+              key={id}
+              id={id}
+              amount={amount}
+              amountShipping={amountShipping}
+              items={items}
+              timestamp={timestamp}
+              images={images}
+            />
+          ))}
+        </div>
 
       </main>
     </div>

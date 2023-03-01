@@ -56,10 +56,10 @@ export default function Header() {
             }
             <p className="font-extrabold md:text-sm">Account & Lists</p>
           </div>
-          <div className="flex flex-col items-center link">
+          <Link href="/orders" className="flex flex-col items-center link">
             <p>Returns</p>
             <p className="font-extrabold md:text-sm">& Orders</p>
-          </div>
+          </Link>
           <Link href="/checkout" className="relative flex items-center link">
             <span className="absolute top-0 right-0 md:right-12 h-4 w-4 bg-yellow-400 rounded-full text-center text-black font-bold">
               {items.length}
